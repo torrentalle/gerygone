@@ -4,7 +4,7 @@ init:
   - go env
 
 # clones and cd's to path
-clone_folder: C:\GOPATH\src\github.com\gohugoio\hugo
+clone_folder: %GOPATH%\src\github.com\torrentalle\gerygone
 
 install:
   - set PATH=%PATH%;%GOPATH%\bin
