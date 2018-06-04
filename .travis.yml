@@ -21,7 +21,3 @@ script:
   - mage -v gerygoneRace
   - mage -v check
   - ./gerygone
-
-before_install:
-  - gem install asciidoctor
-  - type asciidoctor
