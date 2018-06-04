@@ -5,7 +5,7 @@ init:
   - cd
 
 install:
-  - print %GOPATH%
+  - echo %GOPATH%
   - go env
   - go get -v github.com/magefile/mage
   - dir %GOPATH%
