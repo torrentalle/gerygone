@@ -2,15 +2,13 @@ init:
   - set PATH=%PATH%;C:\MinGW\bin;%GOPATH%\bin
   - go version
   - go env
-
-# clones and cd's to path
-clone_folder: src\github.com\torrentalle\gerygone
+  - cd
 
 install:
-  - cd
-  - set PATH=%PATH%;%GOPATH%\bin
+  - print %GOPATH%
+  - go env
   - go get -v github.com/magefile/mage
-  - dir /s %GOPATH%
+  - dir %GOPATH%
 
 build_script:
   - mage vendor gerygoneRace
