@@ -4,9 +4,10 @@ init:
   - go env
 
 # clones and cd's to path
-clone_folder: %GOPATH%\src\github.com\torrentalle\gerygone
+clone_folder: src\github.com\torrentalle\gerygone
 
 install:
+  - cd
   - set PATH=%PATH%;%GOPATH%\bin
   - go get -v github.com/magefile/mage
   - dir /s %GOPATH%
