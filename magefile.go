@@ -22,7 +22,7 @@ const (
 	noGitLdflags = "-X $PACKAGE/gerygonelib.BuildDate=$BUILD_DATE"
 )
 
-var ldflags = "-X $PACKAGE/gerygonelib.CommitHash=$COMMIT_HASH -X $PACKAGE/gerygonelib.BuildDate=$BUILD_DATE"
+var ldflags = "-s -w -X $PACKAGE/gerygonelib.CommitHash=$COMMIT_HASH -X $PACKAGE/gerygonelib.BuildDate=$BUILD_DATE"
 
 // allow user to override go executable by running as GOEXE=xxx make ... on unix-like systems
 var goexe = "go"
@@ -73,23 +73,23 @@ func GerygoneNoGitInfo() error {
 	return Gerygone()
 }
 
-//var docker = sh.RunCmd("docker")
-//
-//// Gerygone gerygone Docker container
-//func Docker() error {
-//	if err := docker("build", "-t", "gerygone", "."); err != nil {
-//		return err
-//	}
-//	// yes ignore errors here
-//	docker("rm", "-f", "gerygone-build")
-//	if err := docker("run", "--name", "gerygone-build", "gerygone ls /go/bin"); err != nil {
-//		return err
-//	}
-//	if err := docker("cp", "gerygone-build:/go/bin/gerygone", "."); err != nil {
-//		return err
-//	}
-//	return docker("rm", "gerygone-build")
-//}
+var docker = sh.RunCmd("docker")
+
+// Gerygone gerygone Docker container
+func Docker() error {
+	if err := docker("build", "-t", "gerygone", "."); err != nil {
+		return err
+	}
+	// yes ignore errors here
+	docker("rm", "-f", "gerygone-build")
+	if err := docker("create", "--name", "gerygone-build", "gerygone"); err != nil {
+		return err
+	}
+	if err := docker("cp", "gerygone-build:/go/bin/gerygone", "."); err != nil {
+		return err
+	}
+	return docker("rm", "gerygone-build")
+}
 
 // Run tests and linters
 func Check() {
