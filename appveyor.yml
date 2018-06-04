@@ -7,6 +7,7 @@ init:
 clone_folder: C:\GOPATH\src\github.com\gohugoio\hugo
 
 install:
+  - set PATH=%PATH%;%GOPATH%\bin
   - go get -v github.com/magefile/mage
 
 build_script:
