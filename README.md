@@ -1,6 +1,6 @@
 # Gerygone
 
-Quick and Easy infrastructure validation built with [Go][].
+Quick and Easy Cloud infrastructure validation built with [Go][].
 
 [Overview](#overview) |
 [Installation](#installation)
@@ -12,9 +12,14 @@ Quick and Easy infrastructure validation built with [Go][].
 
 ## Overview
 
-Gerygone is a YAML based tool for validating a infrastructure’s configuration. 
-It eases the process of writing tests by allowing the user to generate tests from the current system state. 
-Once the test suite is written they can be executed, waited-on, or served as a health endpoint.
+With Gerygone, you can write YAML tests for checking your cloud infrastructure is configured correctly.
+It's planned to provide support for multiple cloud providers but in the initial stage only [AWS](https://aws.amazon.com) is supported.
+
+Gerygone tests your actual infrastructure state by executing API calls. So you can use any Infrastructure as Code tool, Terraform, CloudFormation, Heat, Azure Templates and so on.
+
+This package is **at an early stage of development and is not ready for production usage**
+
+
 
 ## Installation
 
@@ -45,8 +50,9 @@ The simplest way is to use [mage](https://github.com/magefile/mage) (a Make alte
 
 ```bash
 go get github.com/magefile/mage
-go get -d github.com/torrentalle/gerygone
-cd ${GOPATH:-$HOME/go}/src/github.com/torrentalle/gerygone
+git clone https://github.com/torrentalle/gerygone --branch v0 \
+    ${GOPATH}/src/github.com/torrentalle/gerygone 
+cd ${GOPATH}/src/github.com/torrentalle/gerygone
 mage vendor
 mage install
 ```

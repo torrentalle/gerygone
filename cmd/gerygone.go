@@ -30,9 +30,8 @@ var gerygoneCmd = &cobra.Command{
 	Version: "0.0.1-dev",
 	Use:     "gerygone",
 	Short:   "Quick and Easy infrastructure validation",
-	Long: `Gerygone is a YAML based tool for validating a infrastructure’s configuration. 
-It eases the process of writing tests by allowing the user to generate tests from the current system state. 
-Once the test suite is written they can be executed, waited-on, or served as a health endpoint.`,
+	Long: `Gerygone is a YAML based tool for validating Cloud infrastructure configuration. 
+With Gerygone, you can write YAML tests for checking your cloud infrastructure is configured correctly.`,
 
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
