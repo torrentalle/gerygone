@@ -1,3 +1,6 @@
 build/
 vendor/
 
+# Gerygone binary
+gerygone
+
