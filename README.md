@@ -6,8 +6,8 @@ Quick and Easy Cloud infrastructure validation built with [Go][].
 [Installation](#installation)
 
 [![GoDoc](https://godoc.org/github.com/torrentalle/gerygone?status.svg)](https://godoc.org/github.com/torrentalle/gerygone)
-[![Linux and macOS Build Status](https://api.travis-ci.org/torrentalle/gerygone.svg?branch=master&label=Linux+and+macOS+build "Linux and macOS Build Status")](https://travis-ci.org/torrentalle/gerygone)
-[![Windows build status](https://ci.appveyor.com/api/projects/status/kn26cekg25iy5xmb/branch/master?svg=true)](https://ci.appveyor.com/project/torrentalle/gerygone/branch/master)
+[![Linux and macOS Build Status](https://api.travis-ci.org/torrentalle/gerygone.svg?branch=v0&label=Linux+and+macOS+build "Linux and macOS Build Status")](https://travis-ci.org/torrentalle/gerygone)
+[![Windows build status](https://ci.appveyor.com/api/projects/status/kn26cekg25iy5xmb/branch/v0?svg=true)](https://ci.appveyor.com/project/torrentalle/gerygone/branch/master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/torrentalle/gerygone)](https://goreportcard.com/report/github.com/torrentalle/gerygone)
 
 ## Overview
